@@ -1,5 +1,13 @@
 {
+
   "name": "education",
+
+
+  "name": "school-website",
+
+  "name": "school",
+
+
   "version": "0.1.0",
   "private": true,
   "dependencies": {
