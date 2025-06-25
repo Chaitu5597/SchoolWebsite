@@ -1,18 +1,22 @@
-import React from 'react'
-import { Route,  } from 'react-router-dom'
-import About from './CommonComponents/About/Aboutus'
-import Layoutpage from './Pages/Layoutpage'
+// router.js
+import { createBrowserRouter } from 'react-router-dom';
+import Layoutpage from '../src/Pages/Layoutpage';
+import Home from './Pages/Home/Home';
+import About from './CommonComponents/About/Aboutus';
 
-const Routes = () => {
-  return (
-    <div>
-   
-    <Routes>
-      <Route path='/' element={<Layoutpage/>}/> 
-    </Routes>
-   
-    </div>
-  )
-}
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layoutpage />,
+    children: [
+      { index: true,
+         element: <Home />
+         },
+      { path: 'about',
+         element: <About />
+         },
+    ],
+  },
+]);
 
-export default Routes
+export default router;
