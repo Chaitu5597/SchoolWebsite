@@ -14,37 +14,49 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link } from 'react-router-dom';
 
-const pages = [
+const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Courses', path: '/courses' },
-  { label: 'Contact', path: '/contact' },
-];
-
-const dropdownPages = [
-  { label: 'Our Team', path: '/team' },
-  { label: 'Testimonial', path: '/testimonial' },
-  { label: '404 Page', path: '/404' },
+  {
+    label: 'About',
+    children: [
+      { label: 'Our Team', path: '/about' },
+      { label: 'Testimonial', path: '/testimonial' },
+    ],
+  },
+  {
+    label: 'Courses',
+    children: [
+      { label: 'Web Development', path: '/courses/web' },
+      { label: 'Data Science', path: '/courses/data' },
+    ],
+  },
+  {
+    label: 'Pages',
+    children: [
+      { label: '404 Page', path: '/404' },
+      { label: 'Contact', path: '/contact' },
+    ],
+  },
 ];
 
 function CustomNavbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElDropdown, setAnchorElDropdown] = React.useState(null);
+  const [anchorEls, setAnchorEls] = React.useState({});
+  const [mobileMenuAnchor, setMobileMenuAnchor] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleOpenDropdown = (event, key) => {
+    setAnchorEls((prev) => ({ ...prev, [key]: event.currentTarget }));
   };
 
-  const handleOpenDropdown = (event) => {
-    setAnchorElDropdown(event.currentTarget);
+  const handleCloseDropdown = (key) => {
+    setAnchorEls((prev) => ({ ...prev, [key]: null }));
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleOpenMobileMenu = (event) => {
+    setMobileMenuAnchor(event.currentTarget);
   };
 
-  const handleCloseDropdown = () => {
-    setAnchorElDropdown(null);
+  const handleCloseMobileMenu = () => {
+    setMobileMenuAnchor(null);
   };
 
   return (
@@ -70,39 +82,45 @@ function CustomNavbar() {
 
           {/* Desktop Menu */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
-            {pages.map((page) => (
-              <Button
-                key={page.label}
-                component={Link}
-                to={page.path}
-                sx={{ color: 'text.primary' }}
-              >
-                {page.label}
-              </Button>
-            ))}
-            <Button
-              onClick={handleOpenDropdown}
-              endIcon={<ArrowDropDownIcon />}
-              sx={{ color: 'text.primary' }}
-            >
-              Pages
-            </Button>
-            <Menu
-              anchorEl={anchorElDropdown}
-              open={Boolean(anchorElDropdown)}
-              onClose={handleCloseDropdown}
-            >
-              {dropdownPages.map((item) => (
-                <MenuItem
+            {navItems.map((item, index) => {
+              const key = `menu-${index}`;
+              return item.children ? (
+                <React.Fragment key={item.label}>
+                  <Button
+                    onClick={(e) => handleOpenDropdown(e, key)}
+                    endIcon={<ArrowDropDownIcon />}
+                    sx={{ color: 'text.primary' }}
+                  >
+                    {item.label}
+                  </Button>
+                  <Menu
+                    anchorEl={anchorEls[key]}
+                    open={Boolean(anchorEls[key])}
+                    onClose={() => handleCloseDropdown(key)}
+                  >
+                    {item.children.map((child) => (
+                      <MenuItem
+                        key={child.label}
+                        component={Link}
+                        to={child.path}
+                        onClick={() => handleCloseDropdown(key)}
+                      >
+                        {child.label}
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </React.Fragment>
+              ) : (
+                <Button
                   key={item.label}
                   component={Link}
                   to={item.path}
-                  onClick={handleCloseDropdown}
+                  sx={{ color: 'text.primary' }}
                 >
                   {item.label}
-                </MenuItem>
-              ))}
-            </Menu>
+                </Button>
+              );
+            })}
             <Button
               variant="contained"
               color="primary"
@@ -114,35 +132,40 @@ function CustomNavbar() {
 
           {/* Mobile Menu */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton size="large" onClick={handleOpenNavMenu}>
+            <IconButton size="large" onClick={handleOpenMobileMenu}>
               <MenuIcon />
             </IconButton>
             <Menu
-              anchorEl={anchorElNav}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              anchorEl={mobileMenuAnchor}
+              open={Boolean(mobileMenuAnchor)}
+              onClose={handleCloseMobileMenu}
             >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.label}
-                  component={Link}
-                  to={page.path}
-                  onClick={handleCloseNavMenu}
-                >
-                  {page.label}
-                </MenuItem>
-              ))}
-              <MenuItem onClick={handleOpenDropdown}>Pages</MenuItem>
-              {dropdownPages.map((item) => (
-                <MenuItem
-                  key={item.label}
-                  component={Link}
-                  to={item.path}
-                  onClick={handleCloseDropdown}
-                >
-                  {item.label}
-                </MenuItem>
-              ))}
+              {navItems.map((item) =>
+                item.children ? (
+                  <React.Fragment key={item.label}>
+                    <MenuItem disabled>{item.label}</MenuItem>
+                    {item.children.map((child) => (
+                      <MenuItem
+                        key={child.label}
+                        component={Link}
+                        to={child.path}
+                        onClick={handleCloseMobileMenu}
+                      >
+                        {child.label}
+                      </MenuItem>
+                    ))}
+                  </React.Fragment>
+                ) : (
+                  <MenuItem
+                    key={item.label}
+                    component={Link}
+                    to={item.path}
+                    onClick={handleCloseMobileMenu}
+                  >
+                    {item.label}
+                  </MenuItem>
+                )
+              )}
               <MenuItem>
                 <Button variant="contained" fullWidth>
                   Join Now
