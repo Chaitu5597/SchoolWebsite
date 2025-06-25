@@ -9,14 +9,19 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layoutpage />,
     children: [
-      { index: true,
+      { 
+        index: true,
          element: <Home />
          },
-      { path: 'about',
+      {
+         path: 'about',
          element: <About />
          },
+      
     ],
   },
+  
+ 
 ]);
 
 export default router;

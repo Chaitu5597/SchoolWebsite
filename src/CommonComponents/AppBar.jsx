@@ -17,16 +17,16 @@ import { Link } from 'react-router-dom';
 const navItems = [
   { label: 'Home', path: '/' },
   {
-    label: 'About',
+    label: 'Academics',
     children: [
-      { label: 'Our Team', path: '/about' },
-      { label: 'Testimonial', path: '/testimonial' },
+      { label: 'Academics objectives', path: '/about' },
+      { label: 'Class Lkg to 7th', path: '/testimonial' },
     ],
   },
   {
     label: 'Courses',
     children: [
-      { label: 'Web Development', path: '/courses/web' },
+      { label: 'Web Development', path: '/about'  },
       { label: 'Data Science', path: '/courses/data' },
     ],
   },
