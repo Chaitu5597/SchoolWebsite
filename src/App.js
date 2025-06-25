@@ -1,17 +1,9 @@
+// App.js
 import React from 'react';
-import { Route,BrowserRouter as Router, Routes } from 'react-router-dom';
-import About from './CommonComponents/About/Aboutus';
-
+import { RouterProvider } from 'react-router-dom';
+import router from './Routes'; 
 function App() {
-  return (
-   <Router>
-    <Routes>
-      <Route path='/' element={<About/>}/> 
-      
-      
-
-    </Routes>
-   </Router>
-  ); 
+  return <RouterProvider router={router} />;
 }
+
 export default App;
