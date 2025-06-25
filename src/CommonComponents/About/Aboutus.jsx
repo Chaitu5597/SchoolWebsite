@@ -4,6 +4,7 @@ import team1 from '../../assets/images/team-1.jpg';
 import team2 from '../../assets/images/team-2.jpg';
 import team3 from '../../assets/images/team-3.jpg';
 import team4 from '../../assets/images/team-4.jpg';
+import aboutImage from '../../assets/images/about.jpg';
 
 import {
   Box, Container, Grid, Typography, Button, Card, CardContent, CardMedia,
@@ -25,6 +26,8 @@ const About = () => {
     { icon: <MenuBookIcon />, title: 'Book Library' },
   ];
 
+
+
   const instructors = [
     { name: 'John Doe', designation: 'Instructor', img: team1 },
     { name: 'Jane Smith', designation: 'Instructor', img: team2 },
@@ -32,15 +35,15 @@ const About = () => {
     { name: 'Bob Brown', designation: 'Instructor', img: team4 },
   ];
 
+
   return (
     <Box sx={{ pt: 5, pb: 10 }}>
-      {/* Header */}
+  
       <Box sx={{ bgcolor: 'primary.main', color: 'white', py: 6, textAlign: 'center' }}>
         <Typography variant="h3">About Us</Typography>
         <Typography variant="subtitle1">Welcome to eLearning</Typography>
       </Box>
 
-      {/* Services */}
       <Container sx={{ mt: 5 }}>
         <Grid container spacing={4}>
           {services.map((service, i) => (
@@ -59,12 +62,12 @@ const About = () => {
         </Grid>
       </Container>
 
-      {/* About Section */}
       <Container sx={{ mt: 10 }}>
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <img src="/img/about.jpg" alt="About" style={{ width: '100%', borderRadius: 8 }} />
-          </Grid>
+         <Grid item xs={12} md={6}>
+  <img src={aboutImage} alt="About" style={{ width: '100%', borderRadius: 8 }} />
+</Grid>
+
           <Grid item xs={12} md={6}>
             <Typography variant="h6" color="primary">About Us</Typography>
             <Typography variant="h4" gutterBottom>Welcome to eLEARNING</Typography>
@@ -92,7 +95,6 @@ const About = () => {
         </Grid>
       </Container>
 
-      {/* Instructors */}
       <Container sx={{ mt: 10 }}>
         <Typography variant="h4" align="center" gutterBottom>Expert Instructors</Typography>
         <Grid container spacing={4}>
