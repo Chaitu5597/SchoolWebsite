@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import team1 from '../../assets/images/team-1.jpg';
 import team2 from '../../assets/images/team-2.jpg';
 import team3 from '../../assets/images/team-3.jpg';
 import team4 from '../../assets/images/team-4.jpg';
 
-
 import {
-  Box, Container, Grid, Typography, Button, Card, CardContent, CardMedia, Avatar, Stack, IconButton
+  Box, Container, Grid, Typography, Button, Card, CardContent, CardMedia,
+  Avatar, Stack, IconButton
 } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import LanguageIcon from '@mui/icons-material/Language';
@@ -24,13 +25,12 @@ const About = () => {
     { icon: <MenuBookIcon />, title: 'Book Library' },
   ];
 
- const instructors = [
-  { name: 'John Doe', designation: 'Instructor', img: team1 },
-  { name: 'Jane Smith', designation: 'Instructor', img: team2 },
-  { name: 'Alice Johnson', designation: 'Instructor', img: team3 },
-  { name: 'Bob Brown', designation: 'Instructor', img: team4 },
-];
-
+  const instructors = [
+    { name: 'John Doe', designation: 'Instructor', img: team1 },
+    { name: 'Jane Smith', designation: 'Instructor', img: team2 },
+    { name: 'Alice Johnson', designation: 'Instructor', img: team3 },
+    { name: 'Bob Brown', designation: 'Instructor', img: team4 },
+  ];
 
   return (
     <Box sx={{ pt: 5, pb: 10 }}>
@@ -80,7 +80,14 @@ const About = () => {
                 </Grid>
               ))}
             </Grid>
-            <Button variant="contained" sx={{ mt: 3 }}>Read More</Button>
+            <Button
+              variant="contained"
+              sx={{ mt: 3 }}
+              component={Link}
+              to="/about/details"
+            >
+              Read More
+            </Button>
           </Grid>
         </Grid>
       </Container>
@@ -97,9 +104,33 @@ const About = () => {
                   <Typography variant="h6">{ins.name}</Typography>
                   <Typography variant="body2">{ins.designation}</Typography>
                   <Stack direction="row" justifyContent="center" spacing={1} mt={1}>
-                    <IconButton color="primary"><FacebookIcon fontSize="small" /></IconButton>
-                    <IconButton color="primary"><TwitterIcon fontSize="small" /></IconButton>
-                    <IconButton color="primary"><InstagramIcon fontSize="small" /></IconButton>
+                    <IconButton
+                      color="primary"
+                      component="a"
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FacebookIcon fontSize="small" />
+                    </IconButton>
+                    <IconButton
+                      color="primary"
+                      component="a"
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <TwitterIcon fontSize="small" />
+                    </IconButton>
+                    <IconButton
+                      color="primary"
+                      component="a"
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <InstagramIcon fontSize="small" />
+                    </IconButton>
                   </Stack>
                 </CardContent>
               </Card>

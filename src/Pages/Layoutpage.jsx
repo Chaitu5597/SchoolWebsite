@@ -1,14 +1,15 @@
-import React from 'react'
-import Footer from '../CommonComponents/Footer'
-import About from '../CommonComponents/About/Aboutus'
+// Layout.js
+import React from 'react';
+import CustomNavbar from '../CommonComponents/AppBar';
+import Footer from '../CommonComponents/Footer';
+import { Outlet } from 'react-router-dom';
 
-const Layoutpage = () => {
-  return (
-    <div>
-        <About/>
-        <Footer/>
-    </div>
-  )
-}
+const Layoutpage = () => (
+  <>
+    <CustomNavbar />
+    <Outlet />
+    <Footer />
+  </>
+);
 
-export default Layoutpage
+export default Layoutpage;
