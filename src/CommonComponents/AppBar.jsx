@@ -13,6 +13,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -64,7 +65,7 @@ function CustomNavbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component={Link}
             to="/"
@@ -72,12 +73,12 @@ function CustomNavbar() {
               display: 'flex',
               alignItems: 'center',
               textDecoration: 'none',
-              color: 'primary.main',
+              color: 'black',
               fontWeight: 700,
               px: 2,
             }}
           >
-            <i className="fa fa-book" style={{ marginRight: 8 }}></i> eLEARNING
+            <i className="fa fa-book" style={{ marginRight: 8 }}></i> Sreesai Medhaa
           </Typography>
 
           {/* Desktop Menu */}
@@ -124,9 +125,9 @@ function CustomNavbar() {
             <Button
               variant="contained"
               color="primary"
-              sx={{ ml: 3, px: 4, py: 1.5, display: { xs: 'none', lg: 'inline-flex' } }}
+              sx={{ ml: 3, px: 2, py: 1, display: { xs: 'none', lg: 'inline-flex' } }}
             >
-              Join Now <i className="fa fa-arrow-right" style={{ marginLeft: 8 }}></i>
+              Join Now <ArrowForwardIcon sx={{marginLeft: 2}}/> <i className="fa fa-arrow-right" style={{ marginLeft: 8 }}></i>
             </Button>
           </Box>
 
