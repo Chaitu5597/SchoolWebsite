@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Typography, Button, Container } from '@mui/material';
-import bg1 from '../../assets/images/bg_1.jpg';
-import bg2 from '../../assets/images/bg_2.jpg';
+// import bg1 from '../../assets/images/bg_1.jpg';
+// import bg2 from '../../assets/images/bg_2.jpg';
+import { ImageAssets } from '../../assets/Imageassets/ImageAssets';
 
 const slides = [
   {
-    image: bg1,
+    image: ImageAssets.bg1,
     title: 'Kids Are The Best',
     subtitle: 'Explorers In The World',
   },
   {
-    image: bg2,
+    image: ImageAssets.bg2,
     title: 'Perfect Learned',
     subtitle: 'For Your Child',
   },
