@@ -95,7 +95,7 @@ const AboutSection = () => {
                       <Typography variant="subtitle1" fontWeight={600}>
                         {item.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
                         {item.description}
                       </Typography>
                       {/* <Chip
