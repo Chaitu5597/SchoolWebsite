@@ -12,22 +12,22 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link } from 'react-router-dom';
 
 const navItems = [
   { label: 'Home', path: '/' },
   {
     label: 'Academics',
     children: [
-      { label: 'Academics objectives', path: '/about' },
-      { label: 'Class Lkg to 7th', path: '/testimonial' },
+      { label: 'Academics Objectives', path: '/about' },
+      { label: 'Class LKG to 7th', path: '/testimonial' },
     ],
   },
   {
     label: 'Courses',
     children: [
-      { label: 'Web Development', path: '/about'  },
+      { label: 'Web Development', path: '/about' },
       { label: 'Data Science', path: '/courses/data' },
     ],
   },
@@ -64,6 +64,7 @@ function CustomNavbar() {
     <AppBar position="sticky" color="default" elevation={3}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
+          {/* Title with unique gradient + font */}
           <Typography
             variant="h4"
             noWrap
@@ -73,12 +74,17 @@ function CustomNavbar() {
               display: 'flex',
               alignItems: 'center',
               textDecoration: 'none',
-              color: 'black',
-              fontWeight: 700,
-              px: 2,
+              fontWeight: 900,
+              fontFamily: `'Caveat', cursive`, // Or 'Poppins', etc.
+              fontSize: '2.5rem',
+              letterSpacing: '2px',
+              background: 'linear-gradient(to right, #e91e63, #ff9800, #2196f3)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              
             }}
           >
-            <i className="fa fa-book" style={{ marginRight: 8 }}></i> Sreesai Medhaa
+            🎓 Sreesai Medhaa
           </Typography>
 
           {/* Desktop Menu */}
@@ -127,7 +133,7 @@ function CustomNavbar() {
               color="primary"
               sx={{ ml: 3, px: 2, py: 1, display: { xs: 'none', lg: 'inline-flex' } }}
             >
-              Join Now <ArrowForwardIcon sx={{marginLeft: 2}}/> <i className="fa fa-arrow-right" style={{ marginLeft: 8 }}></i>
+              Join Now <ArrowForwardIcon sx={{ ml: 1 }} />
             </Button>
           </Box>
 
