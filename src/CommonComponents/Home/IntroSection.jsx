@@ -10,6 +10,7 @@ const IntroSection = () => {
         minHeight: '50vh',
         position: 'relative',
         backgroundImage: `url(${ImageAssets.bg3})`,
+        color:'black',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'scroll',
@@ -44,7 +45,7 @@ const IntroSection = () => {
               <Typography
                 variant="h4"
                 sx={{
-                  color: '#fff',
+                  color: 'black',
                   fontSize: 36,
                   fontWeight: 600,
                 }}
@@ -54,7 +55,11 @@ const IntroSection = () => {
               </Typography>
               <Box sx={{ paddingRight: '90px' }}>
 
-                <Typography>
+                <Typography sx={{
+                  color: 'black',
+                  fontWeight: 300,
+                 
+                }}>
                   Instilling good manners early on helps children build empathy, respect, and confidence that lasts a lifetime. Our courses are designed to engage young minds with real-world social scenarios, encouraging thoughtful behavior and positive communication skills.
                 </Typography>
               </Box>
