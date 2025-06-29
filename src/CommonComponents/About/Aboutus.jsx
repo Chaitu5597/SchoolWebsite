@@ -201,40 +201,6 @@ const AboutPage = () => {
           </Paper>
         </Container>
       </Box>
-
-      <Box sx={{ backgroundColor: '#343a40', color: 'white', py: 6 }}>
-        <Container>
-          <Grid container spacing={4}>
-            <Grid item md={3}>
-              <Typography variant="h6">Have a Questions?</Typography>
-              <Typography variant="body2">
-                203 Fake St. Mountain View, San Francisco, California, USA
-              </Typography>
-              <Typography variant="body2">+2 392 3929 210</Typography>
-              <Typography variant="body2">info@yourdomain.com</Typography>
-            </Grid>
-            <Grid item md={3}>
-              <Typography variant="h6">Recent Blog</Typography>
-              <Typography variant="body2">Even the all-powerful Pointing has no control about</Typography>
-              <Typography variant="caption">Dec 25, 2018 - Admin</Typography>
-            </Grid>
-            <Grid item md={3}>
-              <Typography variant="h6">Links</Typography>
-              {['Home', 'About', 'Services', 'Departments', 'Contact'].map((text) => (
-                <Typography variant="body2" key={text}>{text}</Typography>
-              ))}
-            </Grid>
-            <Grid item md={3}>
-              <Typography variant="h6">Connect With Us</Typography>
-              <Stack direction="row" spacing={2}>
-                <IconButton color="inherit"><TwitterIcon /></IconButton>
-                <IconButton color="inherit"><FacebookIcon /></IconButton>
-                <IconButton color="inherit"><InstagramIcon /></IconButton>
-              </Stack>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
     </Box>
   );
 };
