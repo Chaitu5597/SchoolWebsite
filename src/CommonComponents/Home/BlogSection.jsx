@@ -140,7 +140,6 @@ const BlogSection = () => {
                     <Typography variant="body2" color="text.secondary" mb={2}>
                       {post.summary}
                     </Typography>
-
                     <Stack direction="row" alignItems="center" justifyContent="space-between">
                       <Typography variant="caption" color="text.secondary">
                         {post.admin}

@@ -14,6 +14,8 @@ import ExperienceCounter from '../../CommonComponents/Home/ExperienceCounter';
 import TestimonialSection from '../../CommonComponents/Home/TestimonialSection';
 import QuoteFormSection from '../../CommonComponents/Home/QuoteFormSection';
 import BlogSection from '../../CommonComponents/Home/BlogSection';
+import ContactInfo from '../../CommonComponents/Home/ContactInfo';
+
 
 const Home = () => {
   // const cardData = [
@@ -26,10 +28,11 @@ const Home = () => {
   return (
     <div>
       {/* <CustomNavbar /> */}
+      <ContactInfo/>
       <Caroucel />
       <HomeCards/>
       <ServicesSection/>
-      <AboutSection/>
+      <AboutSection/> 
       <IntroSection/>
       <TeachersSection/>
       <CoursesSection/>
