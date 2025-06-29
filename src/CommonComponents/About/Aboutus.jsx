@@ -1,147 +1,242 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import team1 from '../../assets/images/team-1.jpg';
-import team2 from '../../assets/images/team-2.jpg';
-import team3 from '../../assets/images/team-3.jpg';
-import team4 from '../../assets/images/team-4.jpg';
-import aboutImage from '../../assets/images/about.jpg';
-
 import {
-  Box, Container, Grid, Typography, Button, Card, CardContent, CardMedia,
-  Avatar, Stack, IconButton
+  Box,
+  Typography,
+  Container,
+  Grid,
+  Button,
+  Card,
+  CardContent,
+  TextField,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Paper,
+  Avatar,
+  IconButton,
+  Stack
 } from '@mui/material';
-import SchoolIcon from '@mui/icons-material/School';
-import LanguageIcon from '@mui/icons-material/Language';
-import HomeIcon from '@mui/icons-material/Home';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
-const About = () => {
-  const services = [
-    { icon: <SchoolIcon />, title: 'Skilled Instructors' },
-    { icon: <LanguageIcon />, title: 'Online Classes' },
-    { icon: <HomeIcon />, title: 'Home Projects' },
-    { icon: <MenuBookIcon />, title: 'Book Library' },
-  ];
+import bg2 from '../../assets/images/bg_2.jpg';
 
-
-
-  const instructors = [
-    { name: 'John Doe', designation: 'Instructor', img: team1 },
-    { name: 'Jane Smith', designation: 'Instructor', img: team2 },
-    { name: 'Alice Johnson', designation: 'Instructor', img: team3 },
-    { name: 'Bob Brown', designation: 'Instructor', img: team4 },
-  ];
-
-
+const AboutPage = () => {
   return (
-    <Box sx={{ pt: 5, pb: 10 }}>
-  
-      <Box sx={{ bgcolor: 'primary.main', color: 'white', py: 6, textAlign: 'center' }}>
-        <Typography variant="h3">About Us</Typography>
-        <Typography variant="subtitle1">Welcome to eLearning</Typography>
+    <Box>
+      <Box sx={{ backgroundColor: '#007bff', py: 2, color: 'white' }}>
+        <Container>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4} display="flex" alignItems="center">
+              <LocationOnIcon sx={{ mr: 1 }} />
+              <Typography variant="body2">
+                198 West 21th Street
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={4} display="flex" alignItems="center">
+              <EmailIcon sx={{ mr: 1 }} />
+              <Typography variant="body2">youremail@email.com</Typography>
+            </Grid>
+            <Grid item xs={12} md={4} display="flex" alignItems="center">
+              <PhoneIcon sx={{ mr: 1 }} />
+              <Typography variant="body2">+1235 2355 98</Typography>
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
 
-      <Container sx={{ mt: 5 }}>
+      <Box
+        sx={{
+          backgroundImage: `url(${bg2})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          py: 10,
+          textAlign: 'center',
+          color: 'white'
+        }}
+      >
+        <Typography variant="h3">About Us</Typography>
+        <Typography variant="body1">Home / About Us</Typography>
+      </Box>
+
+      <Container sx={{ py: 5 }}>
         <Grid container spacing={4}>
-          {services.map((service, i) => (
-            <Grid item xs={12} sm={6} md={3} key={i}>
-              <Card sx={{ textAlign: 'center', p: 3 }}>
-                <Avatar sx={{ bgcolor: 'primary.main', mx: 'auto', mb: 2 }}>
-                  {service.icon}
-                </Avatar>
-                <Typography variant="h6">{service.title}</Typography>
-                <Typography variant="body2" sx={{ mt: 1 }}>
-                  Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam
-                </Typography>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      <Container sx={{ mt: 10 }}>
-        <Grid container spacing={4} alignItems="center">
-         <Grid item xs={12} md={6}>
-  <img src={aboutImage} alt="About" style={{ width: '100%', borderRadius: 8 }} />
-</Grid>
-
-          <Grid item xs={12} md={6}>
-            <Typography variant="h6" color="primary">About Us</Typography>
-            <Typography variant="h4" gutterBottom>Welcome to eLEARNING</Typography>
-            <Typography variant="body1" paragraph>
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
+          <Grid item md={5}>
+            <Paper elevation={3} sx={{ p: 3 }}>
+              <Typography variant="h4" gutterBottom>
+                Welcome to Kiddos Learning School
+              </Typography>
+              <Typography paragraph>
+                On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.
+              </Typography>
+              <Typography paragraph>
+                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. And if she hasn’t been rewritten, then they are still using her.
+              </Typography>
+              <Button variant="contained" color="secondary">
+                Read More
+              </Button>
+            </Paper>
+          </Grid>
+          <Grid item md={7}>
+            <Typography variant="h4" gutterBottom>
+              What We Offer
             </Typography>
-            <Grid container spacing={1}>
-              {['Skilled Instructors', 'Online Classes', 'International Certificate'].map((item, idx) => (
-                <Grid item xs={6} key={idx}>
-                  <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box component="span" sx={{ mr: 1, color: 'primary.main' }}>→</Box> {item}
-                  </Typography>
+            <Grid container spacing={2}>
+              {[
+                'Safety First',
+                'Regular Classes',
+                'Certified Teachers',
+                'Sufficient Classrooms',
+                'Creative Lessons',
+                'Sports Facilities'
+              ].map((title) => (
+                <Grid item xs={12} md={6} key={title}>
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Typography variant="h6">{title}</Typography>
+                      <Typography variant="body2">
+                        Far far away, behind the word mountains, far from the countries Vokalia.
+                      </Typography>
+                    </CardContent>
+                  </Card>
                 </Grid>
               ))}
             </Grid>
-            <Button
-              variant="contained"
-              sx={{ mt: 3 }}
-              component={Link}
-              to="/about/details"
-            >
-              Read More
-            </Button>
           </Grid>
         </Grid>
       </Container>
 
-      <Container sx={{ mt: 10 }}>
-        <Typography variant="h4" align="center" gutterBottom>Expert Instructors</Typography>
-        <Grid container spacing={4}>
-          {instructors.map((ins, i) => (
-            <Grid item xs={12} sm={6} md={3} key={i}>
-              <Card>
-                <CardMedia component="img" height="220" image={ins.img} alt={ins.name} />
-                <CardContent sx={{ textAlign: 'center' }}>
-                  <Typography variant="h6">{ins.name}</Typography>
-                  <Typography variant="body2">{ins.designation}</Typography>
-                  <Stack direction="row" justifyContent="center" spacing={1} mt={1}>
-                    <IconButton
-                      color="primary"
-                      component="a"
-                      href="https://facebook.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FacebookIcon fontSize="small" />
-                    </IconButton>
-                    <IconButton
-                      color="primary"
-                      component="a"
-                      href="https://twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <TwitterIcon fontSize="small" />
-                    </IconButton>
-                    <IconButton
-                      color="primary"
-                      component="a"
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <InstagramIcon fontSize="small" />
-                    </IconButton>
-                  </Stack>
-                </CardContent>
-              </Card>
+      <Box
+        sx={{
+          backgroundColor: '#444',
+          py: 10,
+          color: 'white',
+          textAlign: 'center'
+        }}
+      >
+        <Container>
+          <Typography variant="h3" gutterBottom>
+            20 Years of Experience
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {[
+              { number: 18, label: 'Certified Teachers' },
+              { number: 351, label: 'Successful Kids' },
+              { number: 564, label: 'Happy Parents' },
+              { number: 300, label: 'Awards Won' }
+            ].map((item) => (
+              <Grid item md={3} xs={6} key={item.label}>
+                <Typography variant="h4">{item.number}</Typography>
+                <Typography>{item.label}</Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      <Box sx={{ py: 10, backgroundColor: '#f8f9fa' }}>
+        <Container>
+          <Typography variant="h4" textAlign="center" gutterBottom>
+            What Parents Say About Us
+          </Typography>
+          <Typography textAlign="center">
+            Testimonials will go here. (Images removed due to file errors)
+          </Typography>
+        </Container>
+      </Box>
+
+      <Box
+        sx={{
+          backgroundImage: `url(${require('../../assets/images/bg_5.jpg')})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          py: 10,
+          color: 'white'
+        }}
+      >
+        <Container>
+          <Typography variant="h4" color="white" gutterBottom>
+            Request A Quote
+          </Typography>
+          <Paper sx={{ p: 4, mt: 2 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <TextField fullWidth label="First Name" />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField fullWidth label="Last Name" />
+              </Grid>
+              <Grid item xs={6}>
+                <FormControl fullWidth>
+                  <InputLabel>Select Course</InputLabel>
+                  <Select defaultValue="">
+                    <MenuItem value="Art">Art Lesson</MenuItem>
+                    <MenuItem value="Language">Language Lesson</MenuItem>
+                    <MenuItem value="Music">Music Lesson</MenuItem>
+                    <MenuItem value="Sports">Sports</MenuItem>
+                    <MenuItem value="Other">Other Services</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6}>
+                <TextField fullWidth label="Phone" />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField fullWidth multiline rows={3} label="Message" />
+              </Grid>
+              <Grid item xs={12}>
+                <Button variant="contained" color="secondary">
+                  Request A Quote
+                </Button>
+              </Grid>
             </Grid>
-          ))}
-        </Grid>
-      </Container>
+          </Paper>
+        </Container>
+      </Box>
+
+      <Box sx={{ backgroundColor: '#343a40', color: 'white', py: 6 }}>
+        <Container>
+          <Grid container spacing={4}>
+            <Grid item md={3}>
+              <Typography variant="h6">Have a Questions?</Typography>
+              <Typography variant="body2">
+                203 Fake St. Mountain View, San Francisco, California, USA
+              </Typography>
+              <Typography variant="body2">+2 392 3929 210</Typography>
+              <Typography variant="body2">info@yourdomain.com</Typography>
+            </Grid>
+            <Grid item md={3}>
+              <Typography variant="h6">Recent Blog</Typography>
+              <Typography variant="body2">Even the all-powerful Pointing has no control about</Typography>
+              <Typography variant="caption">Dec 25, 2018 - Admin</Typography>
+            </Grid>
+            <Grid item md={3}>
+              <Typography variant="h6">Links</Typography>
+              {['Home', 'About', 'Services', 'Departments', 'Contact'].map((text) => (
+                <Typography variant="body2" key={text}>{text}</Typography>
+              ))}
+            </Grid>
+            <Grid item md={3}>
+              <Typography variant="h6">Connect With Us</Typography>
+              <Stack direction="row" spacing={2}>
+                <IconButton color="inherit"><TwitterIcon /></IconButton>
+                <IconButton color="inherit"><FacebookIcon /></IconButton>
+                <IconButton color="inherit"><InstagramIcon /></IconButton>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
     </Box>
   );
 };
 
-export default About;
+export default AboutPage;
