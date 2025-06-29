@@ -20,3 +20,26 @@ html, body, #root {
   overflow-x: hidden;
   width: 100%;
 }
+
+.ftco-section {
+	padding: 7em 0;
+	position: relative;
+}
+
+
+
+.counter-box {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.counter-icon {
+  margin-bottom: 10px;
+}
