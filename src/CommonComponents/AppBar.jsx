@@ -31,7 +31,7 @@ const navItems = [
       { label: 'Data Science', path: '/courses/data' },
     ],
   },
-  {
+  { 
     label: 'Pages',
     children: [
       { label: '404 Page', path: '/404' },
