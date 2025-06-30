@@ -31,7 +31,7 @@ const navItems = [
       { label: 'Blog', path: '/Blog' },
     ],
   },
-  {
+  { 
     label: 'Pages',
     children: [
       { label: '404 Page', path: '/404' },
