@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Cources = () => {
+  import Courcespage from '../../CommonComponents/Cources/Cources'
+
+const Courcespage = () => {
   return (
     <div>
-        Cources
+        <Cources/>
     </div>
   )
 }
 
-export default Cources
+export default Courcespage

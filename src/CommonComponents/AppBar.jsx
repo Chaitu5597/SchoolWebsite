@@ -27,8 +27,8 @@ const navItems = [
   {
     label: 'Courses',
     children: [
-      { label: 'Web Development', path: '/about' },
-      { label: 'Data Science', path: '/courses/data' },
+      { label: 'Course', path: '/Course' },
+      { label: 'Blog', path: '/Blog' },
     ],
   },
   {

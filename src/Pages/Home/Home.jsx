@@ -69,6 +69,9 @@ const Home = () => {
       <Box sx={{ animation: `${fadeIn} 0.8s ease 1.1s both` }}>
         <BlogSection />
       </Box>
+      <Box >
+       <blog/>
+      </Box>
     </Suspense>
   );
 };
