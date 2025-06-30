@@ -4,6 +4,7 @@ import Layoutpage from '../src/Pages/Layoutpage';
 import Home from './Pages/Home/Home';
 import About from './CommonComponents/About/Aboutus';
 import  Cources from './CommonComponents/Cources/Cources';
+import Courcesblog from './Pages/Cources/Courcesblog';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
          path: 'course',
          element: <Cources/> 
          },
+         {
+          path: 'courcesblog',
+          element: <Courcesblog/>
+         }
 
 
          

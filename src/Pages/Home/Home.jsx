@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Box, keyframes } from '@mui/material';
 import LoadingFallback from '../../CommonComponents/LoadingFallback';
+import Courcesblog from '../Cources/Courcesblog';
 
 // Lazy-loaded components
 const Caroucel = lazy(() => import('../../CommonComponents/Home/Caroucel'));
@@ -68,9 +69,6 @@ const Home = () => {
       </Box>
       <Box sx={{ animation: `${fadeIn} 0.8s ease 1.1s both` }}>
         <BlogSection />
-      </Box>
-      <Box >
-       <blog/>
       </Box>
     </Suspense>
   );
