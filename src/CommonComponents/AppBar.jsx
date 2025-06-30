@@ -95,7 +95,7 @@ function CustomNavbar() {
                   <Button
                     onClick={(e) => handleOpenDropdown(e, key)}
                     endIcon={<ArrowDropDownIcon />}
-                    sx={{ color: 'text.primary' }}
+                    sx={{ color: 'text.primary', fontWeight: 400 }}
                   >
                     {item.label}
                   </Button>
@@ -110,6 +110,7 @@ function CustomNavbar() {
                         component={Link}
                         to={child.path}
                         onClick={() => handleCloseDropdown(key)}
+                        sx={{ fontWeight: 500 }}
                       >
                         {child.label}
                       </MenuItem>
@@ -121,7 +122,7 @@ function CustomNavbar() {
                   key={item.label}
                   component={Link}
                   to={item.path}
-                  sx={{ color: 'text.primary' }}
+                  sx={{ color: 'text.primary', fontWeight: 400 }}
                 >
                   {item.label}
                 </Button>
@@ -135,6 +136,7 @@ function CustomNavbar() {
                 py: 1,
                 backgroundColor: '#6A1B9A',
                 color: '#fff',
+                fontWeight: 400,
                 '&:hover': {
                   backgroundColor: '#4A148C',
                 },
@@ -159,13 +161,16 @@ function CustomNavbar() {
               {navItems.map((item) =>
                 item.children ? (
                   <React.Fragment key={item.label}>
-                    <MenuItem disabled>{item.label}</MenuItem>
+                    <MenuItem disabled sx={{ fontWeight: 700 }}>
+                      {item.label}
+                    </MenuItem>
                     {item.children.map((child) => (
                       <MenuItem
                         key={child.label}
                         component={Link}
                         to={child.path}
                         onClick={handleCloseMobileMenu}
+                        sx={{ fontWeight: 500 }}
                       >
                         {child.label}
                       </MenuItem>
@@ -177,6 +182,7 @@ function CustomNavbar() {
                     component={Link}
                     to={item.path}
                     onClick={handleCloseMobileMenu}
+                    sx={{ fontWeight: 400 }}
                   >
                     {item.label}
                   </MenuItem>
@@ -189,6 +195,7 @@ function CustomNavbar() {
                   sx={{
                     backgroundColor: '#6A1B9A',
                     color: '#fff',
+                    fontWeight: 400,
                     '&:hover': {
                       backgroundColor: '#4A148C',
                     },
