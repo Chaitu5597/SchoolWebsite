@@ -1,6 +1,6 @@
 import React from 'react'
 
-  import Courcespage from '../../CommonComponents/Cources/Cources'
+  import Cources from '../../CommonComponents/Cources/Cources'
 
 const Courcespage = () => {
   return (

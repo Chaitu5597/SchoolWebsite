@@ -40,7 +40,7 @@ const contactDetails = [
   },
 ];
 
-const ContactPage = () => {
+const Blogs = () => {
   return (
     <Box>
       {/* Hero Section */}
@@ -107,5 +107,5 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Blogs;
 
