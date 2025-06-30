@@ -8,11 +8,23 @@ import {
   CardContent,
   CardMedia,
   Stack,
+  keyframes,
 } from '@mui/material';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import { ImageAssets } from '../../assets/Imageassets/ImageAssets';
 
-// Initial blog post data without comment counts
+// Fade-in animation keyframes
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const initialPosts = [
   {
     title: 'Creative Strategies to Boost Child’s Memory',
@@ -46,13 +58,12 @@ const initialPosts = [
 const BlogSection = () => {
   const [blogPosts, setBlogPosts] = useState(initialPosts);
 
-  // Randomize comment count every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setBlogPosts((prevPosts) =>
         prevPosts.map((post) => ({
           ...post,
-          comments: Math.floor(Math.random() * 20 + 1), // Random between 1 and 20
+          comments: Math.floor(Math.random() * 20 + 1),
         }))
       );
     }, 5000);
@@ -80,7 +91,16 @@ const BlogSection = () => {
           {blogPosts.map((post, index) => {
             const [day, month, year] = post.date.split(' ');
             return (
-              <Grid item key={index} xs={12} sm={6} md={4}>
+              <Grid
+                item
+                key={index}
+                xs={12}
+                sm={6}
+                md={4}
+                sx={{
+                  animation: `${fadeIn} 0.8s ease ${index * 0.2}s both`,
+                }}
+              >
                 <Card
                   onClick={() => handleCardClick(post.title)}
                   sx={{

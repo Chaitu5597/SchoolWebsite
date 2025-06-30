@@ -64,7 +64,7 @@ function CustomNavbar() {
     <AppBar position="sticky" color="default" elevation={3}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-          {/* Title with unique gradient + font */}
+          {/* Logo / Title */}
           <Typography
             variant="h4"
             noWrap
@@ -75,13 +75,12 @@ function CustomNavbar() {
               alignItems: 'center',
               textDecoration: 'none',
               fontWeight: 900,
-              fontFamily: `'Caveat', cursive`, // Or 'Poppins', etc.
+              fontFamily: `'Caveat', cursive`,
               fontSize: '2.5rem',
               letterSpacing: '2px',
               background: 'linear-gradient(to right, #e91e63, #ff9800, #2196f3)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              
             }}
           >
             🎓 Sreesai Medhaa
@@ -130,10 +129,20 @@ function CustomNavbar() {
             })}
             <Button
               variant="contained"
-              color="primary"
-              sx={{ ml: 3, px: 2, py: 1, display: { xs: 'none', lg: 'inline-flex' } }}
+              sx={{
+                ml: 3,
+                px: 2,
+                py: 1,
+                backgroundColor: '#6A1B9A',
+                color: '#fff',
+                '&:hover': {
+                  backgroundColor: '#4A148C',
+                },
+                display: { xs: 'none', lg: 'inline-flex' },
+              }}
+              endIcon={<ArrowForwardIcon sx={{ color: '#fff' }} />}
             >
-              Join Now <ArrowForwardIcon sx={{ ml: 1 }} />
+              Join Now
             </Button>
           </Box>
 
@@ -174,7 +183,18 @@ function CustomNavbar() {
                 )
               )}
               <MenuItem>
-                <Button variant="contained" fullWidth>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  sx={{
+                    backgroundColor: '#6A1B9A',
+                    color: '#fff',
+                    '&:hover': {
+                      backgroundColor: '#4A148C',
+                    },
+                  }}
+                  endIcon={<ArrowForwardIcon sx={{ color: '#fff' }} />}
+                >
                   Join Now
                 </Button>
               </MenuItem>

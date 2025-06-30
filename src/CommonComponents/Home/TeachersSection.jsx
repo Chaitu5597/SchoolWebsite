@@ -15,7 +15,7 @@ const teachers = [
   {
     name: 'Bianca Wilson',
     role: 'Teacher',
-    image: ImageAssets.teacher1, // e.g., '/images/teacher-1.jpg'
+    image: ImageAssets.teacher1,
     profileLink: '/teacher/bianca-wilson',
     bio: `Bianca is an experienced educator with a passion for fostering curiosity and creativity in young minds. She specializes in early childhood development and brings over 10 years of classroom leadership.`,
   },
@@ -28,7 +28,10 @@ const TeachersSection = () => {
         {/* Section Header */}
         <Box textAlign="center" mb={5}>
           <Typography variant="h4" component="h2" gutterBottom>
-            <Box component="span" fontWeight="bold">Certified</Box> Teachers
+            <Box component="span" fontWeight="bold" sx={{ color: '#FB8C00' }}>
+              Certified
+            </Box>{' '}
+            Teachers
           </Typography>
           <Typography maxWidth="100%" mx="auto">
             Our certified teachers bring passion, expertise, and a proven commitment to nurturing each child's potential. With years of classroom experience and specialized training, they create an engaging and supportive environment where students thrive—academically and personally.
@@ -98,7 +101,9 @@ const TeachersSection = () => {
                     width: { sm: '60%' },
                   }}
                 >
-                  <Typography variant="h6" gutterBottom>{teacher.name}</Typography>
+                  <Typography variant="h6" gutterBottom>
+                    {teacher.name}
+                  </Typography>
                   <Typography variant="subtitle2" color="text.secondary" gutterBottom>
                     {teacher.role}
                   </Typography>

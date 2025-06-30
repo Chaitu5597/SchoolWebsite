@@ -1,47 +1,75 @@
-import React from 'react';
-import Caroucel from '../../CommonComponents/Home/Caroucel';
-import CustomNavbar from '../../CommonComponents/AppBar';
-import { Box, Grid } from '@mui/material';
-import { ImageAssets } from '../../assets/Imageassets/ImageAssets';
-import HomeCards from '../../CommonComponents/Home/HomeCards';
-import ServicesSection from '../../CommonComponents/Home/ServicesSection';
-import AboutSection from '../../CommonComponents/Home/AboutSection';
-import IntroSection from '../../CommonComponents/Home/IntroSection';
-import TeachersSection from '../../CommonComponents/Home/TeachersSection';
+import React, { lazy, Suspense } from 'react';
+import { Box, keyframes } from '@mui/material';
+import LoadingFallback from '../../CommonComponents/LoadingFallback';
 
-import CoursesSection from '../../CommonComponents/Home/CourseCard';
-import ExperienceCounter from '../../CommonComponents/Home/ExperienceCounter';
-import TestimonialSection from '../../CommonComponents/Home/TestimonialSection';
-import QuoteFormSection from '../../CommonComponents/Home/QuoteFormSection';
-import BlogSection from '../../CommonComponents/Home/BlogSection';
-import ContactInfo from '../../CommonComponents/Home/ContactInfo';
+// Lazy-loaded components
+const Caroucel = lazy(() => import('../../CommonComponents/Home/Caroucel'));
+const CustomNavbar = lazy(() => import('../../CommonComponents/AppBar'));
+const HomeCards = lazy(() => import('../../CommonComponents/Home/HomeCards'));
+const ServicesSection = lazy(() => import('../../CommonComponents/Home/ServicesSection'));
+const AboutSection = lazy(() => import('../../CommonComponents/Home/AboutSection'));
+const IntroSection = lazy(() => import('../../CommonComponents/Home/IntroSection'));
+const TeachersSection = lazy(() => import('../../CommonComponents/Home/TeachersSection'));
+const CoursesSection = lazy(() => import('../../CommonComponents/Home/CourseCard'));
+const ExperienceCounter = lazy(() => import('../../CommonComponents/Home/ExperienceCounter'));
+const TestimonialSection = lazy(() => import('../../CommonComponents/Home/TestimonialSection'));
+const QuoteFormSection = lazy(() => import('../../CommonComponents/Home/QuoteFormSection'));
+const BlogSection = lazy(() => import('../../CommonComponents/Home/BlogSection'));
+const ContactInfo = lazy(() => import('../../CommonComponents/Home/ContactInfo'));
 
+
+// Fade-in animation
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const Home = () => {
-  // const cardData = [
-  //   { image: ImageAssets.cat1, link: '/about' , title : 'About Us'},
-  //   { image: ImageAssets.cat2, link: '/services' , title : 'Services'},
-  //   { image: ImageAssets.cat3, link: '/contact', title : 'Contact Us' },
-  //   { image: ImageAssets.cat3, link: '/contact', title : 'Contact Us' },
-  // ];
-
   return (
-    <div>
-      {/* <CustomNavbar /> */}
-      <ContactInfo/>
-      <Caroucel />
-      <HomeCards/>
-      <ServicesSection/>
-      <AboutSection/> 
-      <IntroSection/>
-      <TeachersSection/>
-      <CoursesSection/>
-      <ExperienceCounter/>
-      <TestimonialSection/>
-      <QuoteFormSection/>
-      <BlogSection/>
-
-    </div>
+    <Suspense fallback={<LoadingFallback/>}>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0s both` }}>
+        <ContactInfo />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.1s both` }}>
+        <Caroucel />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.2s both` }}>
+        <HomeCards />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.3s both` }}>
+        <ServicesSection />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.4s both` }}>
+        <AboutSection />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.5s both` }}>
+        <IntroSection />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.6s both` }}>
+        <TeachersSection />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.7s both` }}>
+        <CoursesSection />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.8s both` }}>
+        <ExperienceCounter />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.9s both` }}>
+        <TestimonialSection />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 1s both` }}>
+        <QuoteFormSection />
+      </Box>
+      <Box sx={{ animation: `${fadeIn} 0.8s ease 1.1s both` }}>
+        <BlogSection />
+      </Box>
+    </Suspense>
   );
 };
 
