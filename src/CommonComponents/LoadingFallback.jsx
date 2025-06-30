@@ -13,7 +13,7 @@ const LoadingFallback = () => {
         gap: 2,
       }}
     >
-      <CircularProgress color="secondary" size={48} />
+      <CircularProgress color='#4A148C' size={48} />
       <Typography variant="body1" color="text.secondary">
        Loading...
       </Typography>

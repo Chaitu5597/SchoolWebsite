@@ -57,9 +57,9 @@ const Home = () => {
       <Box sx={{ animation: `${fadeIn} 0.8s ease 0.7s both` }}>
         <CoursesSection />
       </Box>
-      <Box sx={{ animation: `${fadeIn} 0.8s ease 0.8s both` }}>
+    
         <ExperienceCounter />
-      </Box>
+      
       <Box sx={{ animation: `${fadeIn} 0.8s ease 0.9s both` }}>
         <TestimonialSection />
       </Box>
