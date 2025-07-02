@@ -1,8 +1,15 @@
 import React from 'react';
 import Contactus from '../../CommonComponents/Contact/Contactus';
 
-const ContactPage= () => {
-  return <Contactus />;
+
+const Contact = () => {
+  return (
+    <div>
+      <Contactus />
+    </div>
+  );
 };
 
-export default ContactPage;
+export default Contact;
+
+
