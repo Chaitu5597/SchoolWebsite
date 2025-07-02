@@ -1,15 +1,11 @@
-// router.js
 import { createBrowserRouter } from 'react-router-dom';
 import Layoutpage from '../src/Pages/Layoutpage';
 import Home from './Pages/Home/Home';
-
-import Teacherpage from './Pages/Teacher/Teacher';
-import About from './Pages/About/About'; 
-
-import About from './CommonComponents/About/Aboutus';
-import  Cources from './CommonComponents/Cources/Cources';
-
+import About from './Pages/About/About';
+import Cources from './CommonComponents/Cources/Cources';
 import Contactus from './CommonComponents/Contact/Contactus';
+import Teacherpage from './Pages/Teacher/Teacher';
+
 
 
 const router = createBrowserRouter([
