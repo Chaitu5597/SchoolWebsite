@@ -3,7 +3,7 @@ import React from 'react'
 const Cources = () => {
   return (
     <div>
-        Cources
+        <Cources/>
     </div>
   )
 }

@@ -21,7 +21,12 @@ const navItems = [
     label: 'Academics',
     children: [
       { label: 'Academics Objectives', path: '/about' },
-      { label: 'Class LKG to 7th', path: '/testimonial' },
+    ],
+  },
+  {
+    label: 'teachers',
+    children: [
+      { label: 'teachers', path: '/teacher' },
     ],
   },
   {
