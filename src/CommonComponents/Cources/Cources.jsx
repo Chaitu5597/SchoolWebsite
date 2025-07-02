@@ -7,8 +7,6 @@ import {
   CardMedia,
   CardContent,
   CardActionArea,
-  useMediaQuery,
-  useTheme,
 } from '@mui/material';
 
 import course1 from '../../assets/images/course-1.jpg';
@@ -65,12 +63,6 @@ const courseList = [
 ];
 
 const Courcespage = () => {
-  const theme = useTheme();
-  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
-  const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-
-  const columns = isXs ? 1 : isSm ? 2 : 3;
-
   return (
     <Box>
       {/* Full-Screen Hero Section */}
@@ -86,10 +78,9 @@ const Courcespage = () => {
           justifyContent: 'center',
           color: 'white',
           textAlign: 'center',
-          px: 2,
         }}
       >
-        <Typography variant={isXs ? 'h4' : 'h2'} fontWeight="bold">
+        <Typography variant="h2" fontWeight="bold">
           Our Courses
         </Typography>
         <Typography variant="body1">Home / Courses</Typography>
@@ -99,7 +90,7 @@ const Courcespage = () => {
       <Box sx={{ py: 8, backgroundColor: '#f8f9fa' }}>
         <Container maxWidth="lg">
           <Typography
-            variant={isXs ? 'h5' : 'h4'}
+            variant="h4"
             fontWeight="bold"
             align="center"
             color="primary"
@@ -113,15 +104,12 @@ const Courcespage = () => {
           </Typography>
         </Container>
 
-        {/* Responsive Course Grid */}
+        {/* Course Grid */}
         <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: `repeat(${columns}, 1fr)`,
-            gap: 4,
-            px: 2,
-            mt: 4,
-          }}
+          display="grid"
+          gridTemplateColumns="repeat(3, 1fr)"
+          gap={4}
+          sx={{ mt: 4, mx: 4 }}
         >
           {courseList.map((course, index) => (
             <Card
@@ -138,9 +126,7 @@ const Courcespage = () => {
                 },
               }}
             >
-              <CardActionArea
-                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-              >
+              <CardActionArea sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <CardMedia
                   component="img"
                   image={course.image}

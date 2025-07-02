@@ -1,12 +1,23 @@
 import React from 'react'
-import About from '../../CommonComponents/About/Aboutus';
-// import CustomNavbar from '../../CommonComponents/AppBar';
+import HeroSection from '../../CommonComponents/About/HeroSection';
+import WhatWeOffer from '../../CommonComponents/About/WeOffer';
+import CounterSection from '../../CommonComponents/About/Counter';
+import QuoteSection from '../../CommonComponents/About/QuoteSection';
+import TestimonialSection from '../../CommonComponents/About/Testimonials';
+import WelcomeSection from '../../CommonComponents/About/WelcomeSection';
+
 
 
 const Aboutpage = () => {
     return(
         <div>
-            <About/>
+            <HeroSection />
+            <WhatWeOffer />
+            <WelcomeSection />
+            <CounterSection />
+            <TestimonialSection/>
+            <QuoteSection />
+            
         </div>
     )
 }

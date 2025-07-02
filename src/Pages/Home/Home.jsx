@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Box, keyframes } from '@mui/material';
 import LoadingFallback from '../../CommonComponents/LoadingFallback';
-import Courcesblog from '../Cources/Courcesblog';
+
 
 // Lazy-loaded components
 const Caroucel = lazy(() => import('../../CommonComponents/Home/Caroucel'));
