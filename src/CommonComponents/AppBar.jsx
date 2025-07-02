@@ -28,10 +28,10 @@ const navItems = [
     label: 'Courses',
     children: [
       { label: 'Course', path: '/Course' },
-      { label: 'Blog', path: '/Blog' },
+      { label: 'Blog', path: '/courcesblog' },
     ],
   },
-  {
+  { 
     label: 'Pages',
     children: [
       { label: '404 Page', path: '/404' },
