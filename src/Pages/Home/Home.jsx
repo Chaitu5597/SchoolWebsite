@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Box, keyframes } from '@mui/material';
 import LoadingFallback from '../../CommonComponents/LoadingFallback';
 
+
 // Lazy-loaded components
 const Caroucel = lazy(() => import('../../CommonComponents/Home/Caroucel'));
 const CustomNavbar = lazy(() => import('../../CommonComponents/AppBar'));

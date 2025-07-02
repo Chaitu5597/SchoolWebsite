@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Cources = () => {
+  import Cources from '../../CommonComponents/Cources/Cources'
+
+const Courcespage = () => {
   return (
     <div>
         <Cources/>
@@ -8,4 +10,4 @@ const Cources = () => {
   )
 }
 
-export default Cources
+export default Courcespage

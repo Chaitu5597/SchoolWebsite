@@ -32,15 +32,15 @@ const navItems = [
   {
     label: 'Courses',
     children: [
-      { label: 'Web Development', path: '/about' },
-      { label: 'Data Science', path: '/courses/data' },
+      { label: 'Course', path: '/Course' },
+      { label: 'Blog', path: '/courcesblog' },
     ],
   },
-  {
+  { 
     label: 'Pages',
     children: [
       { label: '404 Page', path: '/404' },
-      { label: 'Contact', path: '/contact' },
+      { label: 'Contact', path: '/Contactus' },
     ],
   },
 ];
