@@ -1,14 +1,10 @@
+// src/Pages/Cources/blog.jsx
 
-import React from 'react'
+import React from 'react';
+import Blog from '../../CommonComponents/Cources/blog';
 
-  import blog from '../../CommonComponents/pages/blog'
+const BlogPage = () => {
+  return <Blog />;
+};
 
-const ContactPage = () => {
-  return (
-    <div>
-        <blog/>
-    </div>
-  )
-}
-
-export default ContactPage
+export default BlogPage;

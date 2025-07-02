@@ -4,6 +4,9 @@ import Layoutpage from '../src/Pages/Layoutpage';
 import Home from './Pages/Home/Home';
 import About from './CommonComponents/About/Aboutus';
 import  Cources from './CommonComponents/Cources/Cources';
+import Blog from './CommonComponents/Cources/blog';
+import Contactus from './CommonComponents/Contact/Contactus'
+
 
 const router = createBrowserRouter([
   {
@@ -23,7 +26,15 @@ const router = createBrowserRouter([
          path: 'course',
          element: <Cources/> 
          },
-
+          {
+         path: 'blog',
+         element: <Blog/> 
+         },
+           {
+         path: 'Contactus',
+         element: <Contactus/> 
+         }
+         
 
          
       

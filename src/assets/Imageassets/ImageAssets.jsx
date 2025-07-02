@@ -27,6 +27,11 @@ export const ImageAssets = {
     image2:require('../images/image_2.jpg'),
     image3:require('../images/image_3.jpg'),
     image4:require('../images/image_4.jpg'),
+    image5:require('../images/image_5.jpg'),
+    image6:require('../images/image_6.jpg'),
+
+
+
 
     
 };

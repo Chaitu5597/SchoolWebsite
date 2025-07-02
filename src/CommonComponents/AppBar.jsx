@@ -35,7 +35,7 @@ const navItems = [
     label: 'Pages',
     children: [
       { label: '404 Page', path: '/404' },
-      { label: 'Contact', path: '/contact' },
+      { label: 'Contact', path: '/Contactus' },
     ],
   },
 ];

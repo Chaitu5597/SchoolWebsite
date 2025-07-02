@@ -1,111 +1,143 @@
+// src/CommonComponents/Cources/blog.jsx
+
 import React from 'react';
-import {
-  Box,
-  Grid,
-  Typography,
-  Container,
-  TextField,
-  Button,
-  Paper,
-  IconButton,
-  Stack,
-} from '@mui/material';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import PublicIcon from '@mui/icons-material/Public';
+import { Box, Container, Typography, Grid, Avatar, TextField, Button, Paper, Stack } from '@mui/material';
 
-import bg2 from '../../assets/images/bg_2.jpg';
-
-const contactDetails = [
-  {
-    icon: <LocationOnIcon color="primary" />,
-    title: 'Address',
-    text: '198 West 21th Street, Suite 721 New York NY 10016',
-  },
-  {
-    icon: <PhoneIcon color="primary" />,
-    title: 'Contact Number',
-    text: '+1235 2355 98',
-  },
-  {
-    icon: <EmailIcon color="primary" />,
-    title: 'Email Address',
-    text: 'info@yoursite.com',
-  },
-  {
-    icon: <PublicIcon color="primary" />,
-    title: 'Website',
-    text: 'yoursite.com',
-  },
-];
-
-const ContactPage = () => {
+import { ImageAssets } from '../../assets/Imageassets/ImageAssets';
+const Blog = () => {
   return (
     <Box>
       {/* Hero Section */}
       <Box
         sx={{
-          backgroundImage: `url(${bg2})`,
+          backgroundImage: `url(ImageAssets.bg2)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           py: 10,
-          textAlign: 'center',
           color: 'white',
+          textAlign: 'center'
         }}
       >
-        <Container>
-          <Typography variant="h3" fontWeight="bold">Contact Us</Typography>
-          <Typography variant="body1">Home / Contact</Typography>
-        </Container>
+        <Typography variant="h3" fontWeight="bold">Blog Single</Typography>
+        <Typography variant="subtitle1">Home / Blog / Blog Single</Typography>
       </Box>
 
-      {/* Info Cards */}
-      <Box py={6}>
-        <Container>
-          <Grid container spacing={4}>
-            {contactDetails.map((detail, index) => (
-              <Grid item xs={12} md={3} key={index}>
-                <Paper elevation={3} sx={{ p: 3, textAlign: 'center' }}>
-                  <Box mb={2}>{detail.icon}</Box>
-                  <Typography variant="h6" gutterBottom>{detail.title}</Typography>
-                  <Typography variant="body2">{detail.text}</Typography>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
+      <Container sx={{ mt: 6 }}>
+        <Grid container spacing={4}>
+          {/* Main Blog Content */}
+          <Grid item xs={12} md={8}>
+            <Typography variant="h5" fontWeight="bold" gutterBottom>
+              #2. Creative WordPress Themes
+            </Typography>
+            <Typography paragraph>
+              Temporibus ad error suscipit exercitationem hic molestiae totam obcaecati rerum...
+            </Typography>
+            <img src={ImageAssets.image2} alt="blog" width="100%" style={{ borderRadius: 8 }} />
+            <Typography paragraph mt={2}>
+              Quisquam esse aliquam fuga distinctio, quidem delectus veritatis reiciendis...
+            </Typography>
+            <Typography paragraph>
+              Odit voluptatibus, eveniet vel nihil cum ullam dolores laborum...
+            </Typography>
+            <Typography paragraph>
+              Adipisci vero culpa, eius nobis soluta. Dolore, maxime ullam ipsam quidem...
+            </Typography>
 
-      {/* Contact Form and Map */}
-      <Box py={6} sx={{ backgroundColor: '#f8f9fa' }}>
-        <Container>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Paper elevation={3} sx={{ p: 4 }}>
-                <Typography variant="h6" gutterBottom>Send us a message</Typography>
-                <Box component="form">
-                  <Stack spacing={2}>
-                    <TextField fullWidth placeholder="Your Name" variant="outlined" />
-                    <TextField fullWidth placeholder="Your Email" variant="outlined" />
-                    <TextField fullWidth placeholder="Subject" variant="outlined" />
-                    <TextField fullWidth placeholder="Message" multiline rows={4} variant="outlined" />
-                    <Button variant="contained" color="primary">Send Message</Button>
-                  </Stack>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box id="map" sx={{ width: '100%', height: 400, backgroundColor: '#e0e0e0' }}>
-                {/* Embed or implement Google Map here */}
+            {/* Author */}
+            <Paper elevation={2} sx={{ p: 2, mt: 5, display: 'flex' }}>
+              <Avatar src={ImageAssets.image6} sx={{ width: 80, height: 80, mr: 2 }} />
+              <Box>
+                <Typography variant="h6">George Washington</Typography>
+                <Typography variant="body2">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                </Typography>
               </Box>
-            </Grid>
+            </Paper>
+
+            {/* Comments */}
+            <Box mt={5}>
+              <Typography variant="h6" gutterBottom>6 Comments</Typography>
+              {[1, 2, 3].map((_, index) => (
+                <Paper key={index} sx={{ p: 2, mt: 2 }}>
+                  <Stack direction="row" spacing={2}>
+                    <Avatar src={ImageAssets.image6} />
+                    <Box>
+                      <Typography fontWeight="bold">John Doe</Typography>
+                      <Typography variant="caption">Jan 03, 2019 at 2:21pm</Typography>
+                      <Typography variant="body2" mt={1}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                      </Typography>
+                      <Button size="small">Reply</Button>
+                    </Box>
+                  </Stack>
+                </Paper>
+              ))}
+            </Box>
+
+            {/* Comment Form */}
+            <Box mt={5}>
+              <Typography variant="h6" gutterBottom>Leave a Comment</Typography>
+              <Box component="form" noValidate autoComplete="off">
+                <TextField fullWidth label="Name" margin="normal" />
+                <TextField fullWidth label="Email" type="email" margin="normal" />
+                <TextField fullWidth label="Website" margin="normal" />
+                <TextField fullWidth label="Message" multiline rows={4} margin="normal" />
+                <Button variant="contained" sx={{ mt: 2 }}>Post Comment</Button>
+              </Box>
+            </Box>
           </Grid>
-        </Container>
-      </Box>
+
+          {/* Sidebar */}
+          <Grid item xs={12} md={4}>
+            <TextField fullWidth placeholder="Search..." margin="normal" />
+
+            <Box mt={4}>
+              <Typography variant="h6">Category</Typography>
+              <ul style={{ paddingLeft: 16 }}>
+                <li>Art (6)</li>
+                <li>Sports (8)</li>
+                <li>Language (2)</li>
+                <li>Food (2)</li>
+                <li>Music (2)</li>
+              </ul>
+            </Box>
+
+            <Box mt={4}>
+              <Typography variant="h6">Popular Articles</Typography>
+              {[ImageAssets.image1, ImageAssets.image2, ImageAssets.image3].map((img, idx) => (
+                <Box key={idx} display="flex" mb={2}>
+                  <img src={img} alt={`popular-${idx}`} width="64" height="64" style={{ borderRadius: 8, marginRight: 8 }} />
+                  <Box>
+                    <Typography variant="subtitle2">Even the all-powerful Pointing has no control...</Typography>
+                    <Typography variant="caption">Jan. 27, 2019</Typography>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+
+            <Box mt={4}>
+              <Typography variant="h6">Tag Cloud</Typography>
+              <Stack direction="row" flexWrap="wrap" gap={1} mt={1}>
+                {["School", "Kids", "Nursery", "Daycare", "Care", "Kindergarten", "Teacher"].map(tag => (
+                  <Button key={tag} size="small" variant="outlined">{tag}</Button>
+                ))}
+              </Stack>
+            </Box>
+
+            <Box mt={4}>
+              <Typography variant="h6">Archives</Typography>
+              <ul style={{ paddingLeft: 16 }}>
+                <li>December 2018 (30)</li>
+                <li>November 2018 (20)</li>
+                <li>September 2018 (6)</li>
+                <li>August 2018 (8)</li>
+              </ul>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
     </Box>
   );
 };
 
-export default ContactPage;
-
+export default Blog;
