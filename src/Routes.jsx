@@ -5,6 +5,8 @@ import Home from './Pages/Home/Home';
 import About from './CommonComponents/About/Aboutus';
 import  Cources from './CommonComponents/Cources/Cources';
 import Courcesblog from './Pages/Cources/Courcesblog';
+import { ContactPage } from '@mui/icons-material';
+import Contactus from './CommonComponents/Contact/Contactus';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
          {
           path: 'courcesblog',
           element: <Courcesblog/>
+         },
+          {
+          path: 'contact',
+          element: <Contactus/>
          }
 
 
