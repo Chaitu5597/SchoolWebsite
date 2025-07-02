@@ -8,7 +8,7 @@ import {
   Button,
 } from '@mui/material';
 import { Facebook, Twitter, Instagram, Google } from '@mui/icons-material';
-import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ImageAssets } from '../../assets/Imageassets/ImageAssets';
 
 const teachers = [
@@ -16,12 +16,14 @@ const teachers = [
     name: 'Bianca Wilson',
     role: 'Teacher',
     image: ImageAssets.teacher1,
-    profileLink: '/teacher/bianca-wilson',
+    profileLink: '/teacher', 
     bio: `Bianca is an experienced educator with a passion for fostering curiosity and creativity in young minds. She specializes in early childhood development and brings over 10 years of classroom leadership.`,
   },
 ];
 
 const TeachersSection = () => {
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ py: 10, backgroundColor: '#fff' }}>
       <Container>
@@ -43,8 +45,6 @@ const TeachersSection = () => {
           {teachers.map((teacher, index) => (
             <Grid item xs={12} key={index}>
               <Box
-                component={RouterLink}
-                to={teacher.profileLink}
                 sx={{
                   display: 'flex',
                   flexDirection: { xs: 'column', sm: 'row' },
@@ -55,7 +55,6 @@ const TeachersSection = () => {
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  position: 'relative',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: 4,
@@ -72,7 +71,6 @@ const TeachersSection = () => {
                   sx={{
                     width: { xs: '100%', sm: '40%' },
                     height: { xs: 300, sm: 'auto' },
-                    aspectRatio: { sm: '4 / 3' },
                     overflow: 'hidden',
                   }}
                 >
@@ -123,10 +121,11 @@ const TeachersSection = () => {
                     ))}
                   </Stack>
 
-                  {/* Hover Button */}
+                  {/* Know More Button */}
                   <Button
                     variant="contained"
                     className="hover-button"
+                    onClick={() => navigate(teacher.profileLink)}
                     sx={{
                       mt: 3,
                       alignSelf: 'flex-start',
@@ -135,7 +134,7 @@ const TeachersSection = () => {
                       opacity: 0,
                       transform: 'translateY(10px)',
                       transition: 'all 0.3s ease-in-out',
-                      pointerEvents: 'none',
+                      pointerEvents: 'auto',
                       '&:hover': {
                         backgroundColor: '#4a148c',
                       },
