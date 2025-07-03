@@ -1,7 +1,11 @@
+import React from 'react';
 import { Box, Container, Grid, Typography, Button } from '@mui/material';
-import { ImageAssets } from '../../assets/Imageassets/ImageAssets'; // Ensure this exports bg3 correctly
+import { useNavigate } from 'react-router-dom';
+import { ImageAssets } from '../../assets/Imageassets/ImageAssets';
 
 const IntroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -10,12 +14,10 @@ const IntroSection = () => {
         minHeight: '50vh',
         position: 'relative',
         backgroundImage: `url(${ImageAssets.bg3})`,
-        color:'black',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'scroll',
         backgroundPosition: {
-          xs: 'center center',
+          xs: 'center',
           md: 'top center',
         },
         color: 'rgba(255,255,255,0.8)',
@@ -32,60 +34,44 @@ const IntroSection = () => {
           backgroundColor: 'black',
           opacity: 0.2,
           zIndex: 1,
-          pointerEvents: 'none',
         }}
       />
 
-      {/* Content */}
       <Container sx={{ position: 'relative', zIndex: 2 }}>
-        <Grid container spacing={3} alignItems="center">
-
-          <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Grid item xs={12} md={8}  >
-              <Typography
-                variant="h4"
-                sx={{
-                  color: 'black',
-                  fontSize: 36,
-                  fontWeight: 600,
-                }}
-                gutterBottom
-              >
-                Teaching Your Child Some Good Manners
-              </Typography>
-              <Box sx={{ paddingRight: '90px' }}>
-
-                <Typography sx={{
-                  color: 'black',
-                  fontWeight: 300,
-                 
-                }}>
-                  Instilling good manners early on helps children build empathy, respect, and confidence that lasts a lifetime. Our courses are designed to engage young minds with real-world social scenarios, encouraging thoughtful behavior and positive communication skills.
-                </Typography>
-              </Box>
-
-            </Grid>
-            <Grid item xs={12} md={3} display="flex" justifyContent="center" width="30%">
-
-            </Grid>
-
-
+        <Grid container justifyContent="center">
+          <Grid item xs={12} md={8} textAlign="center">
+            <Typography
+              variant="h4"
+              sx={{ color: 'black', fontSize: 36, fontWeight: 600 }}
+              gutterBottom
+            >
+              Teaching Your Child Some Good Manners
+            </Typography>
+            <Typography
+              sx={{
+                color: 'black',
+                fontWeight: 300,
+                mb: 4,
+                px: { xs: 2, md: 8 },
+              }}
+            >
+              Instilling good manners early on helps children build empathy,
+              respect, and confidence that lasts a lifetime...
+            </Typography>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              sx={{
+                borderRadius: '999px',
+                px: 4,
+                py: 1.5,
+              }}
+              onClick={() => navigate('/course')}
+            >
+              Take a Course
+            </Button>
           </Grid>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="large"
-            sx={{
-              borderRadius: '999px',
-              px: 2,
-              py: 1.5,
-              width: '100%',
-              mt: '100px'
-            }}
-          >
-            Take a Course
-          </Button>
-
         </Grid>
       </Container>
     </Box>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Typography, Button, Container } from '@mui/material';
-// import bg1 from '../../assets/images/bg_1.jpg';
-// import bg2 from '../../assets/images/bg_2.jpg';
+import { useNavigate } from 'react-router-dom';
 import { ImageAssets } from '../../assets/Imageassets/ImageAssets';
 
 const slides = [
@@ -19,6 +18,7 @@ const slides = [
 
 const HomeCards = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +33,7 @@ const HomeCards = () => {
     <Box
       sx={{
         width: '100vw',
-        height: '100dvh', // Use dvh for mobile-safe full height
+        height: '100dvh',
         position: 'relative',
         backgroundImage: `url(${slide.image})`,
         backgroundSize: 'cover',
@@ -98,6 +98,7 @@ const HomeCards = () => {
                   sm: '1rem',
                 },
               }}
+              onClick={() => navigate('/about')}
             >
               Read More
             </Button>
