@@ -28,36 +28,36 @@ const blogData = [
   },
   {
     image: img2,
-    title: 'Creative Activities For Children’s Development',
-    date: '27 January 2019',
+    title: 'Eangaing in Creative Activities',
+    date: '27 January 2025',
     description:
       'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...',
   },
   {
     image: img3,
     title: 'The Importance of Outdoor Play',
-    date: '27 January 2019',
+    date: '1 January 2025',
     description:
       'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...',
   },
   {
     image: img4,
     title: 'Art & Creativity Sessions for Kids',
-    date: '28 February 2019',
+    date: '28 February 2025',
     description:
       'Unleash creativity and imagination through painting, drawing, and design activities.',
   },
   {
     image: img5,
     title: 'Teamwork Through Fun Games',
-    date: '15 March 2019',
+    date: '15 March 2025',
     description:
       'Learn to work in groups, communicate effectively, and share ideas in playful settings.',
   },
   {
     image: img6,
     title: 'Storytelling and Memory Power',
-    date: '05 April 2019',
+    date: '05 April 2025',
     description:
       'Interactive storytelling that improves memory retention, focus, and verbal skills.',
   },
