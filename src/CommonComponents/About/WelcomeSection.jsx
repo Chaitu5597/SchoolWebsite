@@ -36,7 +36,7 @@ const WelcomeSection = () => {
               fontSize: { xs: '1.75rem', sm: '2.25rem', md: '2.75rem' },
             }}
           >
-            Welcome to <span style={{ color: '#00bfff' }}>Kiddos Learning School</span>
+            Welcome to <span style={{ color: '#00bfff' }}>SreeSai Medhaa Learning School</span>
           </Typography>
 
           <Typography

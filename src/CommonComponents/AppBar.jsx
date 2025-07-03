@@ -19,7 +19,7 @@ import { useNavigate } from 'react-router-dom';
 
 const navItems = [
   { label: 'Home', path: '/' },
- { label: 'Academics', path: '/about' },
+ { label: 'About Us', path: '/about' },
   { label: 'teachers', path: '/teacher' },
   {
     label: 'Courses',
