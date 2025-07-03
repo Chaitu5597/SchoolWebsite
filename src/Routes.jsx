@@ -4,7 +4,9 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Teacherpage from './Pages/Teacher/Teacher';
 import Cources from './CommonComponents/Cources/Cources';
-import Courcesblog from './Pages/Cources/Courcesblog';
+import Blogs from './CommonComponents/Cources/Blogs';
+
+
 import Contactus from './CommonComponents/Contact/Contactus';
 
 const router = createBrowserRouter([
@@ -28,13 +30,14 @@ const router = createBrowserRouter([
         path: 'course',
         element: <Cources />,
       },
-      {
-        path: 'courcesblog',
-        element: <Courcesblog />,
-      },
+    
       {
         path: 'contact',
         element: <Contactus />,
+      },
+      {
+        path: 'blog',
+        element: <Blogs/>,
       },
     ],
   },
