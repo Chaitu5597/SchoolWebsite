@@ -14,21 +14,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const navItems = [
   { label: 'Home', path: '/' },
-  {
-    label: 'Academics',
-    children: [
-      { label: 'Academics Objectives', path: '/about' },
-    ],
-  },
-  {
-    label: 'teachers',
-    children: [
-      { label: 'teachers', path: '/teacher' },
-    ],
-  },
+ { label: 'Academics', path: '/about' },
+  { label: 'teachers', path: '/teacher' },
   {
     label: 'Courses',
     children: [
@@ -48,6 +40,7 @@ const navItems = [
 function CustomNavbar() {
   const [anchorEls, setAnchorEls] = React.useState({});
   const [mobileMenuAnchor, setMobileMenuAnchor] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenDropdown = (event, key) => {
     setAnchorEls((prev) => ({ ...prev, [key]: event.currentTarget }));
@@ -64,7 +57,9 @@ function CustomNavbar() {
   const handleCloseMobileMenu = () => {
     setMobileMenuAnchor(null);
   };
-
+ const handlesubmit = () => {
+navigate('/contact');
+ }
   return (
     <AppBar position="sticky" color="default" elevation={3}>
       <Container maxWidth="xl">
@@ -134,6 +129,7 @@ function CustomNavbar() {
               );
             })}
             <Button
+            onClick={handlesubmit}
               variant="contained"
               sx={{
                 ml: 3,
@@ -150,6 +146,7 @@ function CustomNavbar() {
               endIcon={<ArrowForwardIcon sx={{ color: '#fff' }} />}
             >
               Join Now
+
             </Button>
           </Box>
 
